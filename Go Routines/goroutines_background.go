@@ -2,17 +2,15 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func say(s string) {
 	for i := 0; i < 5; i++ {
-		time.Sleep(100 * time.Millisecond)
 		fmt.Println(s)
 	}
 }
 
 func main() {
-	go say("this will come second")
-	say("this will come first")	
+	go say("this will never come")
+	say("this will come first")
 }
